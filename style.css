@@ -1,0 +1,111 @@
+:root {
+    --main-bg: #0f172a;
+    --accent: #38bdf8;
+    --glass: rgba(255, 255, 255, 0.05);
+    --text: #f1f5f9;
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Динамичный фон */
+.blob-bg {
+    position: fixed;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #38bdf833 0%, transparent 70%);
+    z-index: -1;
+}
+
+header {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    text-align: center;
+}
+
+.glass-header h1 {
+    font-size: 3rem;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: -50px auto 50px;
+    padding: 0 20px;
+}
+
+/* Аккордеон / Плитки */
+.accordion {
+    background: var(--glass);
+    color: var(--text);
+    cursor: pointer;
+    padding: 22px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: 0.3s;
+    margin-top: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.accordion:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent);
+    transform: translateX(10px);
+}
+
+.panel {
+    padding: 0 22px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: rgba(56, 189, 248, 0.05);
+    border-radius: 0 0 12px 12px;
+}
+
+.panel p {
+    padding: 15px 0;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+/* Факты */
+.fact-card {
+    background: linear-gradient(90deg, #0ea5e922 0%, #6366f122 100%);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    border: 1px dashed var(--accent);
+}
+
+.fact-card.alt {
+    border-color: #fb7185;
+    background: rgba(251, 113, 133, 0.1);
+}
+
+.icon { font-size: 2rem; margin-right: 20px; }
+
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 0.9rem;
+    color: #64748b;
+}
